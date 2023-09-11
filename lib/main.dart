@@ -7,7 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,34 +29,52 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int  count = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            onPressed: () {  },
+            onPressed: () {},
             icon: Icon(Icons.menu),
-
           ),
           actions: [
-            IconButton(onPressed: (){},
-                icon: Icon(Icons.search)
-            ),
-            IconButton(onPressed: (){},
-                icon: Icon(Icons.personal_injury)
-            )
+            IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.personal_injury))
           ],
-          title: Text('APP',style: TextStyle(color: Colors.white),),
+          title: const Text(
+            'APP',
+            style: TextStyle(color: Colors.white),
+          ),
           toolbarHeight: 70,
           centerTitle: true,
-
           backgroundColor: Colors.pinkAccent,
         ),
-        body: Column(
-          children: [
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onLongPress: (){
+                  print('Click Long POress');
+                },
+                  onPressed: () {
+                    print('Clicked');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                  ),
+                  child: Text('CLICK ME',style: TextStyle(color: Colors.white),)
+              ),
+              TextButton(onPressed: (){}, child: Text('Text Button')),
+              OutlinedButton(onPressed: (){}, child: Text('Outline Button')),
+              IconButton(onPressed: (){
 
-          ],
+              }, icon: Icon(Icons.add)),
+
+            ],
+          ),
         ),
       ),
     );
