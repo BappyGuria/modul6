@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -29,7 +28,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int  count = 0;
+  int count = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -52,28 +51,48 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Colors.pinkAccent,
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onLongPress: (){
-                  print('Click Long POress');
-                },
-                  onPressed: () {
-                    print('Clicked');
-                  },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.greenAccent,
+                      hintText: 'User Name',
+                      hintStyle: TextStyle(color: Colors.white),
+                      border: InputBorder.none,
+                      labelText: 'UserName',
+                      suffixIcon: Icon(Icons.person),
+                      prefixIcon: Icon(Icons.supervised_user_circle_outlined)),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.greenAccent,
+                      hintText: 'Password',
+                      hintStyle: TextStyle(color: Colors.white),
+                      border: InputBorder.none,
+                      labelText: 'Password',
+                      suffixIcon: Icon(Icons.person),
+                      prefixIcon: Icon(Icons.supervised_user_circle_outlined)),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                ElevatedButton(onPressed: () {},
+                    child: Text('Login'),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
+                    shape: RoundedRectangleBorder()
                   ),
-                  child: Text('CLICK ME',style: TextStyle(color: Colors.white),)
-              ),
-              TextButton(onPressed: (){}, child: Text('Text Button')),
-              OutlinedButton(onPressed: (){}, child: Text('Outline Button')),
-              IconButton(onPressed: (){
+                ),
 
-              }, icon: Icon(Icons.add)),
-
-            ],
+              ],
+            ),
           ),
         ),
       ),
