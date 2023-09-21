@@ -1,78 +1,47 @@
 import 'package:flutter/material.dart';
 
-class class3 extends StatelessWidget {
+class class3 extends StatefulWidget {
   const class3({super.key});
+
+  @override
+  State<class3> createState() => _class3State();
+}
+
+class _class3State extends State<class3> {
+  List<String> students = [
+    'Bappy',
+    'Lima',
+    'OJanta',
+    'Raju',
+    'Vume',
+    'Bappy',
+    'Lima',
+    'OJanta',
+    'Raju',
+    'Vume'
+  ];
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'List View',
-            style: TextStyle(color: Colors.white),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.blue,
+        child: Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'List View',
+          style: TextStyle(color: Colors.white),
         ),
-        body: Scrollbar(
-          thickness: 10,
-          radius: Radius.circular(10),
-          child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Column(
-              children: [
-                Container(
-                  width: 300,
-                  height: 400,
-                  color: Colors.red,
-                ),
-                Divider(
-                  thickness: 10,
-                  endIndent: 20,
-                  indent: 20,
-                ),
-                Container(
-                  width: 300,
-                  height: 400,
-                  color: Colors.blue,
-                ),
-                Divider(
-                  thickness: 10,
-                  endIndent: 20,
-                  indent: 20,
-                ),
-                Container(
-                  width: 300,
-                  height: 400,
-                  color: Colors.yellow,
-                ),
-                Divider(
-                  thickness: 10,
-                  endIndent: 20,
-                  indent: 20,
-                ),
-                Container(
-                  width: 300,
-                  height: 400,
-                  color: Colors.grey,
-                ),
-                Divider(
-                  thickness: 10,
-                  endIndent: 20,
-                  indent: 20,
-                  color: Colors.blue,
-                ),
-                Container(
-                  width: 300,
-                  height: 400,
-                  color: Colors.red,
-                ),
-              ],
-            ),
-          ),
-        ),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
       ),
-    );
+      body:ListView.builder(
+        itemCount: students.length,
+          itemBuilder: (contex, index){
+
+        return ListTile(
+          title: Text('${students[index]}'),
+        );
+      })
+    )
+   );
   }
 }
