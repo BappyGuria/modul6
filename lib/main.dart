@@ -59,56 +59,23 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 TextField(
-                  decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.blue[100],
-                      hintText: 'User Name',
-                      hintStyle: TextStyle(color: Colors.white),
-                      border: InputBorder.none,
-                      labelText: 'UserName',
-                      suffixIcon: Icon(Icons.person),
-                      prefixIcon: Icon(Icons.supervised_user_circle_outlined)),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                const TextField(
-                  /// Password heaid
-                  obscureText: true,
-                  decoration: InputDecoration(
-
-                      filled: true,
-                      fillColor: Colors.greenAccent,
-                      hintText: 'Password',
-                      hintStyle: TextStyle(color: Colors.white),
-                      border: InputBorder.none,
-                      labelText: 'Password',
-                      suffixIcon: Icon(Icons.person),
-                      prefixIcon: Icon(Icons.supervised_user_circle_outlined),
-
+                Container(
+                  height: 200,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    color: Colors.pink,
+                    border: Border.all(color: Colors.black,width: 2),
+                    borderRadius: BorderRadius.only(topRight: Radius.circular(50),bottomLeft: Radius.circular(50))
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.account_circle_rounded),
-                    suffixIcon: Icon(Icons.email),
-                    hintText: 'E-mail',
-                    labelText: 'E-mail',
-                    border: OutlineInputBorder()
-                  ),
-                ),
-                ElevatedButton(onPressed: () {},
-                    child: Text('Login',style: TextStyle(color: Colors.white),),
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(),
-                    backgroundColor: Colors.pink
-                  ),
-                ),
 
+                  child: Center(
+                    child: Text('Hello Word !',style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30,
+
+                    ),),
+                  ),
+                )
               ],
             ),
           ),
