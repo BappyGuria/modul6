@@ -8,7 +8,10 @@ class class3 extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('List View',style: TextStyle(color: Colors.white),),
+          title: Text(
+            'List View',
+            style: TextStyle(color: Colors.white),
+          ),
           centerTitle: true,
           backgroundColor: Colors.blue,
         ),
@@ -24,19 +27,41 @@ class class3 extends StatelessWidget {
                   height: 400,
                   color: Colors.red,
                 ),
+                Divider(
+                  thickness: 10,
+                  endIndent: 20,
+                  indent: 20,
+                ),
                 Container(
                   width: 300,
                   height: 400,
                   color: Colors.blue,
-                ),Container(
+                ),
+                Divider(
+                  thickness: 10,
+                  endIndent: 20,
+                  indent: 20,
+                ),
+                Container(
                   width: 300,
                   height: 400,
                   color: Colors.yellow,
+                ),
+                Divider(
+                  thickness: 10,
+                  endIndent: 20,
+                  indent: 20,
                 ),
                 Container(
                   width: 300,
                   height: 400,
                   color: Colors.grey,
+                ),
+                Divider(
+                  thickness: 10,
+                  endIndent: 20,
+                  indent: 20,
+                  color: Colors.blue,
                 ),
                 Container(
                   width: 300,
