@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'class3.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -10,12 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: class3(),
     );
   }
 }
@@ -59,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 TextField(
                   decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.greenAccent,
+                      fillColor: Colors.blue[100],
                       hintText: 'User Name',
                       hintStyle: TextStyle(color: Colors.white),
                       border: InputBorder.none,
@@ -70,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   height: 10,
                 ),
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.greenAccent,
@@ -85,9 +88,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 20,
                 ),
                 ElevatedButton(onPressed: () {},
-                    child: Text('Login'),
+                    child: Text('Login',style: TextStyle(color: Colors.white),),
                   style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder()
+                    shape: RoundedRectangleBorder(),
+                    backgroundColor: Colors.pink
                   ),
                 ),
 
