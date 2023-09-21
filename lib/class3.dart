@@ -13,6 +13,8 @@ class class3 extends StatelessWidget {
           backgroundColor: Colors.blue,
         ),
         body: Scrollbar(
+          thickness: 10,
+          radius: Radius.circular(10),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
