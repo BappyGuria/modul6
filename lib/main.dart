@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: class3(),
+      home: MyHomePage(),
     );
   }
 }
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextField(
+                 TextField(
                   decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.blue[100],
@@ -74,7 +74,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 10,
                 ),
                 const TextField(
+                  /// Password heaid
+                  obscureText: true,
                   decoration: InputDecoration(
+
                       filled: true,
                       fillColor: Colors.greenAccent,
                       hintText: 'Password',
@@ -82,10 +85,21 @@ class _MyHomePageState extends State<MyHomePage> {
                       border: InputBorder.none,
                       labelText: 'Password',
                       suffixIcon: Icon(Icons.person),
-                      prefixIcon: Icon(Icons.supervised_user_circle_outlined)),
+                      prefixIcon: Icon(Icons.supervised_user_circle_outlined),
+
+                  ),
                 ),
                 SizedBox(
                   height: 20,
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.account_circle_rounded),
+                    suffixIcon: Icon(Icons.email),
+                    hintText: 'E-mail',
+                    labelText: 'E-mail',
+                    border: OutlineInputBorder()
+                  ),
                 ),
                 ElevatedButton(onPressed: () {},
                     child: Text('Login',style: TextStyle(color: Colors.white),),
