@@ -8,7 +8,7 @@ class class3 extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('List View'),
+          title: Text('List View',style: TextStyle(color: Colors.white),),
           centerTitle: true,
           backgroundColor: Colors.blue,
         ),
