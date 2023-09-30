@@ -10,6 +10,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final userNameControler = TextEditingController();
+  final passwordControler = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,6 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
+                controller: userNameControler,
                 decoration: InputDecoration(
                   filled: true,
                   prefixIcon: Icon(Icons.account_circle_rounded),
@@ -37,6 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 20,),
               TextField(
+              controller: passwordControler,
                 decoration: InputDecoration(
                   hintText: 'Password',
                   prefixIcon: Icon(Icons.password),
@@ -48,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ElevatedButton(
                   onPressed: (){
 
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ProductScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ProductScreen(userName: userNameControler.text, password: passwordControler.text,)));
                   },
                   child: Text('LOGIN',style: TextStyle(color: Colors.white),),
                 style: ElevatedButton.styleFrom(

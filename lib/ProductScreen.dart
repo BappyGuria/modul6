@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:modul6/productDetals.dart';
+import 'package:modul6/productList.dart';
 
-class ProductScreen extends StatefulWidget {
-  const ProductScreen({super.key});
+class ProductScreen extends StatelessWidget {
+  final userName;
+  final password;
+  const ProductScreen({super.key,required this.userName,required this.password});
 
-  @override
-  State<ProductScreen> createState() => _ProductScreenState();
-}
-
-class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,11 +17,13 @@ class _ProductScreenState extends State<ProductScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text(userName.toString()),
+          Text(password.toString()),
           Center(
             child: ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> productDetals()));
-            }, child: Text('Go To Product Detals')),
-          )
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> productList()));
+            }, child: Text('Go To Product List')),
+          ),
         ],
       ),
     );
